@@ -2,6 +2,8 @@
 
 Translate Tagalog toBaybayin, Buhid, Hanunoo, Tagbanwa
 
+> Using [filipino-script-translator](https://github.com/isaacdarcilla/filipino-script-translator) package. Check it out!
+
 ### Getting Started
 
 First, run the development server:
