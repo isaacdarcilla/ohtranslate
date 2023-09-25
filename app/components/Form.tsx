@@ -1,13 +1,15 @@
 "use client"
 
+import copy from 'copy-to-clipboard';
 import { Script, translate } from 'filipino-script-translator';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function Form() {
     const [result, setResult] = useState('');
     const [script, setScript] = useState('baybayin');
     const [text, setText] = useState('');
-    const textRef = useRef(null);
+    const textRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
         handleTranslate(text, script);
@@ -18,6 +20,23 @@ export default function Form() {
         if (textRef.current) {
             textRef.current.value = '';
         }
+    }
+
+    const copyText = () => {
+        copy(result);
+
+        toast.success('Copied to clipboard', {
+            style: {
+                border: '1px solid #713200',
+                padding: '16px',
+                color: '#713200',
+            },
+            iconTheme: {
+                primary: '#713200',
+                secondary: '#FFFAEE',
+            },
+            icon: '👏'
+        });
     }
 
     const handleTranslate = (text: string, selectedScript: string) => {
@@ -60,6 +79,7 @@ export default function Form() {
                 </div>
                 <div className='flex items-center gap-3'>
                     <button type='button' onClick={() => clearText()} className='p-1 bg-brand-200 hover:bg-brand-100 hover:scale-105 text-brand-300 tracking-wider'>Clear</button>
+                    <button type='button' onClick={() => copyText()} className='p-1 bg-brand-200 hover:bg-brand-100 hover:scale-105 text-brand-300 tracking-wider'>Copy Text</button>
                 </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
