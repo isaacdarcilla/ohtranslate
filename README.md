@@ -1,5 +1,7 @@
 ### Oh! Translate.
 
+![image](https://github.com/isaacdarcilla/ohtranslate/assets/22732118/822befe6-6f40-4433-9f82-ef90a309d998)
+
 Translate Tagalog toBaybayin, Buhid, Hanunoo, Tagbanwa
 
 > Using [filipino-script-translator](https://github.com/isaacdarcilla/filipino-script-translator) package. Check it out!
