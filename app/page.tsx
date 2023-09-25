@@ -5,14 +5,12 @@ import Navigation from "./components/Navigation"
 
 export default function Home() {
     return (
-        <main className="leading-normal tracking-normal text-indigo-400 m-6">
-            <div className="h-full">
-                <Navigation />
-                <Card>
-                    <Form/>
-                </Card>
-                <Footer/>
-            </div>
+        <main className="leading-normal tracking-normal m-6 h-full">
+            <Navigation />
+            <Card>
+                <Form />
+            </Card>
+            <Footer />
         </main>
     )
 }

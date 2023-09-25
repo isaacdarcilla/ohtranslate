@@ -1,11 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = localFont({ src: '../public/fonts/Quiapo_Free.otf' })
 
 export const metadata: Metadata = {
-    title: 'Oh! Translate',
+    title: 'Oh! Translate - Translate Tagalog Text',
     description: 'Translate Tagalog to Baybayin, Buhid, Hanunoo, Tagbanwa',
 }
 
@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`{inter.className}  bg-cover bg-fixed`} style={{
-                backgroundImage: "url('/images/header.png')",
-            }}>{children}</body>
+            <body className={`${font.className} bg-brand-400 bg-fixed`}>
+                {children}
+            </body>
         </html>
     )
 }
