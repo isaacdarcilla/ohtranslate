@@ -9,7 +9,7 @@ export default function Form() {
     const [result, setResult] = useState('');
     const [script, setScript] = useState('baybayin');
     const [text, setText] = useState('');
-    const textRef = useRef<HTMLInputElement | null>(null);
+    const textRef = useRef<HTMLTextAreaElement | null>(null);
 
     useEffect(() => {
         handleTranslate(text, script);
